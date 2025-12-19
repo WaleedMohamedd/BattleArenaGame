@@ -17,8 +17,7 @@ public class BattleArenaApp extends Application {
     private Stage primaryStage;
     private Scene selectionScene;
     private GameController gameController;
-
-    // عناصر اختيار الشخصيات + عرض الـ stats
+    
     private ComboBox<String> player1Selection;
     private ComboBox<String> player2Selection;
     private Label player1InfoLabel;
@@ -29,8 +28,7 @@ public class BattleArenaApp extends Application {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("2D Battle Arena");
         primaryStage.setResizable(false);
-
-        // شاشة الاختيار أول ما البرنامج يفتح
+        
         selectionScene = createSelectionScene();
         primaryStage.setScene(selectionScene);
         primaryStage.show();
@@ -150,8 +148,7 @@ public class BattleArenaApp extends Application {
 
         return panel;
     }
-
-    // زرار سريع لاختيار الشخصية
+    
     private Button createFighterButton(String type, int playerNum, ComboBox<String> comboBox) {
         Button btn = new Button(type.substring(0, 1));
         btn.setPrefSize(50, 50);
@@ -260,8 +257,7 @@ public class BattleArenaApp extends Application {
 
         return panel;
     }
-
-    // بتبدأ اللعبة بعد ما الاتنين يختاروا
+    
     private void startGame() {
         String fighter1Type = player1Selection.getValue();
         String fighter2Type = player2Selection.getValue();
@@ -278,8 +274,7 @@ public class BattleArenaApp extends Application {
 
         gameScene.getRoot().requestFocus();
     }
-
-    // Alert بسيط لو في حاجة ناقصة
+    
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Warning");
